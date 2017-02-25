@@ -26,7 +26,7 @@ public class Lockon : MonoBehaviour {
         OrderBy(e => Vector3.Distance(player.transform.position, e.transform.position)).ToArray();
        
 
-        if (em1 != null)
+        if (enemys[0] != null)
         {     
             em1 = enemys[0]; // 一番近いGameObject
                              // GameObject em2 = enemys[enemys.Length - 1]; // 一番遠いゲームオブジェクト
