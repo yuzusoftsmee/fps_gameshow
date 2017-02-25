@@ -1,0 +1,43 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+//ロックオン
+using System.Linq;
+
+public class Lockon : MonoBehaviour {
+
+    public Transform player;//からの距離
+
+    [SerializeField]
+    float dist = 10.0f; // 距離10未満のみ
+    [SerializeField]
+    GameObject em1;
+   
+
+
+
+
+    // Use this for initialization
+    void lockon () {
+
+        //ロックオン
+        GameObject[] enemys = GameObject.FindGameObjectsWithTag("enemy").
+        Where(e => Vector3.Distance(player.transform.position, e.transform.position) < dist).
+        OrderBy(e => Vector3.Distance(player.transform.position, e.transform.position)).ToArray();
+       
+
+        if (em1 != null)
+        {     
+            em1 = enemys[0]; // 一番近いGameObject
+                             // GameObject em2 = enemys[enemys.Length - 1]; // 一番遠いゲームオブジェクト
+
+
+            //ロックオンできた時、何か判定するもの
+
+
+
+        }
+
+    }
+	
+}
